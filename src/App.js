@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Rock from "./icons/Rock";
 import Paper from "./icons/Paper";
 import Scissors from "./icons/Scissors";
@@ -11,8 +11,11 @@ const choices = [
 ];
 
 export default function App() {
+  const [userChoice, setUserChoice] = useState(null);
+
   function handleUserChoice(choice) {
-    const userChoice = choices.find((c) => c.id === choice);
+    const chosenChoice = choices.find((c) => c.id === choice);
+    setUserChoice(chosenChoice);
   }
 
   return (
