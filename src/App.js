@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Rock from "./icons/Rock";
 import Paper from "./icons/Paper";
 import Scissors from "./icons/Scissors";
@@ -12,6 +12,12 @@ const choices = [
 
 export default function App() {
   const [userChoice, setUserChoice] = useState(null);
+  const [computerChoice, setComputerChoice] = useState(null);
+
+  useEffect(() => {
+    const randomChoice = choices(Math.floor(Math.random() * choices.length));
+    setComputerChoice(randomChoice);
+  }, []);
 
   function handleUserChoice(choice) {
     const chosenChoice = choices.find((c) => c.id === choice);
