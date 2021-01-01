@@ -14,15 +14,15 @@ export default function App() {
   const [userChoice, setUserChoice] = useState(null);
   const [computerChoice, setComputerChoice] = useState(null);
 
-  useEffect(() => {
-    const randomChoice = choices(Math.floor(Math.random() * choices.length));
-    setComputerChoice(randomChoice);
-  }, []);
-
   function handleUserChoice(choice) {
     const chosenChoice = choices.find((c) => c.id === choice);
     setUserChoice(chosenChoice);
   }
+
+  useEffect(() => {
+    const randomChoice = choices[Math.floor(Math.random() * choices.length)];
+    setComputerChoice(randomChoice);
+  }, []);
 
   return (
     <div className="app">
@@ -55,13 +55,13 @@ export default function App() {
 
         {/* buttons for my choice */}
         <div>
-          <button className="rock" onClick={handleUserChoice(1)}>
+          <button className="rock" onClick={() => handleUserChoice(1)}>
             <Rock />
           </button>
-          <button className="paper" onClick={handleUserChoice(2)}>
+          <button className="paper" onClick={() => handleUserChoice(2)}>
             <Paper />
           </button>
-          <button className="scissors" onClick={handleUserChoice(3)}>
+          <button className="scissors" onClick={() => handleUserChoice(3)}>
             <Scissors />
           </button>
         </div>
