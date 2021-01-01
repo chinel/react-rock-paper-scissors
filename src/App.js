@@ -11,7 +11,9 @@ const choices = [
 ];
 
 export default function App() {
-  function handleUserChoice(choice) {}
+  function handleUserChoice(choice) {
+    const userChoice = choices.find((c) => c.id === choice);
+  }
 
   return (
     <div className="app">
@@ -44,13 +46,13 @@ export default function App() {
 
         {/* buttons for my choice */}
         <div>
-          <button className="rock">
+          <button className="rock" onClick={handleUserChoice(1)}>
             <Rock />
           </button>
-          <button className="paper">
+          <button className="paper" onClick={handleUserChoice(2)}>
             <Paper />
           </button>
-          <button className="scissors">
+          <button className="scissors" onClick={handleUserChoice(3)}>
             <Scissors />
           </button>
         </div>
