@@ -17,7 +17,7 @@ body {
   padding-left: 50px;
   padding-right: 50px;
   background: #478aef;
-  color: #cadbf5;
+  color: #f8f8f8;
 }
 
 h1,
@@ -85,7 +85,7 @@ h6 {
   grid-gap: 20px;
   font-family: "Varela Round", sans-serif;
   font-size: 18px;
-  color: #5f99f0;
+  color: #ffffff;
 }
 
 .choices > div {
@@ -98,7 +98,7 @@ h6 {
 .vs {
   width: 100px;
   font-size: 100px;
-  opacity: 0.25;
+  opacity: 0.5;
   transform: rotate(-0.1turn);
   pointer-events: none;
 }
