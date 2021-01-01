@@ -4,7 +4,15 @@ import Paper from "./icons/Paper";
 import Scissors from "./icons/Scissors";
 import "./App.css";
 
+const choices = [
+  { id: 1, name: "rock", component: Rock },
+  { id: 2, name: "paper", component: Paper },
+  { id: 3, name: "scissors", component: Scissors },
+];
+
 export default function App() {
+  function handleUserChoice(choice) {}
+
   return (
     <div className="app">
       {/* information goes here */}
