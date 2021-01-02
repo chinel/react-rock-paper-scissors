@@ -22,6 +22,13 @@ export default function App() {
     setComputerChoice(randomChoice);
   }, []);
 
+  function restartGame() {
+    setGameState(null);
+    setUserChoice(null);
+    const randomChoice = choices[Math.floor(Math.random() * choices.length)];
+    setComputerChoice(randomChoice);
+  }
+
   function handleUserChoice(choice) {
     const chosenChoice = choices.find((c) => c.id === choice);
     setUserChoice(chosenChoice);
@@ -76,6 +83,7 @@ export default function App() {
               {gameState === "draw" && <p>You drew</p>}
               <p>{renderComponent(computerChoice)}</p>
             </div>
+            <button onClick={() => restartGame()}>Play Again</button>
           </div>
         </div>
       )}
