@@ -12,11 +12,17 @@ export default function GameState({
     <div className={`game-state ${gameState}`} onClick={() => restartGame()}>
       <div>
         <div className="game-state-content">
-          <p>{userChoice && renderComp(userChoice)}</p>
+          <p>
+            {userChoice && renderComp(userChoice)}
+            <span>You</span>
+          </p>
           {gameState === "win" && <p>Congrats! You won!</p>}
           {gameState === "lose" && <p>Sorry! You lost!</p>}
           {gameState === "draw" && <p>You drew</p>}
-          <p>{renderComp(computerChoice)}</p>
+          <p>
+            {renderComp(computerChoice)}
+            <span>Computer</span>
+          </p>
         </div>
         <button onClick={() => restartGame()}>Play Again</button>
       </div>
