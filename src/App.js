@@ -18,8 +18,7 @@ export default function App() {
   const [gameState, setGameState] = useState(null); //win, loss, draw
 
   useEffect(() => {
-    const randomChoice = choices[Math.floor(Math.random() * choices.length)];
-    setComputerChoice(randomChoice);
+    restartGame();
   }, []);
 
   function restartGame() {
@@ -74,7 +73,7 @@ export default function App() {
 
       {/* the popup to show win/loss/draw */}
       {gameState && (
-        <div className={`game-state ${gameState}`}>
+        <div className={`game-state ${gameState}`} >
           <div>
             <div className="game-state-content">
               <p>{renderComponent(userChoice)}</p>
