@@ -3,6 +3,7 @@ import Rock from "./icons/Rock";
 import Paper from "./icons/Paper";
 import Scissors from "./icons/Scissors";
 import "./App.css";
+import WinLoses from "./components/WinLoses";
 
 const choices = [
   { id: 1, name: "rock", component: Rock, losesTo: 2 },
@@ -73,21 +74,13 @@ export default function App() {
 
       {/* the popup to show win/loss/draw */}
       {gameState && (
-        <div
-          className={`game-state ${gameState}`}
-          onClick={() => restartGame()}
-        >
-          <div>
-            <div className="game-state-content">
-              <p>{renderComponent(userChoice)}</p>
-              {gameState === "win" && <p>Congrats! You won!</p>}
-              {gameState === "lose" && <p>Sorry! You lost!</p>}
-              {gameState === "draw" && <p>You drew</p>}
-              <p>{renderComponent(computerChoice)}</p>
-            </div>
-            <button onClick={() => restartGame()}>Play Again</button>
-          </div>
-        </div>
+        <WinLoses
+          gameState={gameState}
+          restartGame={restartGame}
+          renderComponent={renderComponent}
+          userChoice={userChoice}
+          computerChoice={computerChoice}
+        />
       )}
       <div className="choices">
         {/* choices captions */}
