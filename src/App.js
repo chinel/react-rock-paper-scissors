@@ -73,7 +73,10 @@ export default function App() {
 
       {/* the popup to show win/loss/draw */}
       {gameState && (
-        <div className={`game-state ${gameState}`} >
+        <div
+          className={`game-state ${gameState}`}
+          onClick={() => restartGame()}
+        >
           <div>
             <div className="game-state-content">
               <p>{renderComponent(userChoice)}</p>
