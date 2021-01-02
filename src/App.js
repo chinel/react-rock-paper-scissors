@@ -4,6 +4,7 @@ import Paper from "./icons/Paper";
 import Scissors from "./icons/Scissors";
 import "./App.css";
 import WinLoses from "./components/WinLoses";
+import Choices from "./components/Choices";
 
 const choices = [
   { id: 1, name: "rock", component: Rock, losesTo: 2 },
@@ -82,32 +83,7 @@ export default function App() {
           computerChoice={computerChoice}
         />
       )}
-      <div className="choices">
-        {/* choices captions */}
-        <div>You</div>
-        <div />
-        <div>Computer</div>
-
-        {/* buttons for my choice */}
-        <div>
-          <button className="rock" onClick={() => handleUserChoice(1)}>
-            <Rock />
-          </button>
-          <button className="paper" onClick={() => handleUserChoice(2)}>
-            <Paper />
-          </button>
-          <button className="scissors" onClick={() => handleUserChoice(3)}>
-            <Scissors />
-          </button>
-        </div>
-
-        <div className="vs">vs</div>
-
-        {/* show the computer's choice */}
-        <div>
-          <button className="computer-choice">?</button>
-        </div>
-      </div>
+      <Choices handleUserChoice={handleUserChoice} />
     </div>
   );
 }
