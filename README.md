@@ -1,6 +1,6 @@
 # React Rock Paper Scissors Game
 
-### [Live Site](https://happy-bhabha-676a03.netlify.app)
+### [Live Site](https://amazing-benz-e69899.netlify.app)
 
 ![React Rock Paper Scissors Game](https://i.imgur.com/lfHg179.png)
 
