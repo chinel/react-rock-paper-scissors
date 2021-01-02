@@ -2,7 +2,7 @@
 
 ### [Live Site](https://happy-bhabha-676a03.netlify.app)
 
-![React Rock Paper Scissors Game](https://i.imgur.com/864zDSs.png)
+![React Rock Paper Scissors Game](https://i.imgur.com/lfHg179.png)
 
 ## Introduction
 
