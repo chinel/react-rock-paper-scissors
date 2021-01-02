@@ -71,7 +71,9 @@ export default function App() {
           <div>
             <div className="game-state-content">
               <p>{renderComponent(userChoice)}</p>
-              <p>You {gameState} !</p>
+              {gameState === "win" && <p>Congrats! You won!</p>}
+              {gameState === "lose" && <p>Sorry! You lost!</p>}
+              {gameState === "draw" && <p>You drew</p>}
               <p>{renderComponent(computerChoice)}</p>
             </div>
           </div>
