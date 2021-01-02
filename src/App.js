@@ -11,6 +11,8 @@ const choices = [
 ];
 
 export default function App() {
+  const [wins, setWins] = useState(0);
+  const [losses, setLosses] = useState(0);
   const [userChoice, setUserChoice] = useState(null);
   const [computerChoice, setComputerChoice] = useState(null);
 
@@ -33,13 +35,13 @@ export default function App() {
         {/* wins vs losses stats */}
         <div className="wins-losses">
           <div className="wins">
-            <span className="number">0</span>
-            <span className="text">Wins</span>
+            <span className="number">{wins}</span>
+            <span className="text">{wins === 1 ? "Win" : "Wins"}</span>
           </div>
 
           <div className="losses">
-            <span className="number">0</span>
-            <span className="text">Losses</span>
+            <span className="number">{losses}</span>
+            <span className="text">{losses === 1 ? "Loss" : "Losses"}</span>
           </div>
         </div>
       </div>
