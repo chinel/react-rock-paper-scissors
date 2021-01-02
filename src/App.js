@@ -3,8 +3,9 @@ import Rock from "./icons/Rock";
 import Paper from "./icons/Paper";
 import Scissors from "./icons/Scissors";
 import "./App.css";
-import WinLoses from "./components/WinLoses";
+import WinLoses from "./components/GameState";
 import Choices from "./components/Choices";
+import GameState from "./components/GameState";
 
 const choices = [
   { id: 1, name: "rock", component: Rock, losesTo: 2 },
@@ -75,7 +76,7 @@ export default function App() {
 
       {/* the popup to show win/loss/draw */}
       {gameState && (
-        <WinLoses
+        <GameState
           gameState={gameState}
           restartGame={restartGame}
           renderComponent={renderComponent}
