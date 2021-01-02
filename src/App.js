@@ -29,6 +29,11 @@ export default function App() {
     setGameState("win");
   }
 
+  function renderComponent(choice) {
+    const Component = choice.component;
+    return <Component />;
+  }
+
   return (
     <div className="app">
       {/* information goes here */}
@@ -54,9 +59,9 @@ export default function App() {
         <div className={`game-state ${gameState}`}>
           <div>
             <div className="game-state-content">
-              <p>User's Icon</p>
+              <p>{renderComponent(userChoice)}</p>
               <p>You won</p>
-              <p>Computer's Icon'</p>
+              <p>{renderComponent(computerChoice)}</p>
             </div>
           </div>
         </div>
