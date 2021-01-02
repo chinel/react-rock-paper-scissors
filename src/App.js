@@ -60,7 +60,7 @@ export default function App() {
     <div className="app">
       {/* information goes here */}
 
-      <WinLoses wins={wins} lose={losses} />
+      <WinLoses wins={wins} losses={losses} />
 
       {/* the popup to show win/loss/draw */}
       {gameState && (
