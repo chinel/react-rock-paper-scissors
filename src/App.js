@@ -5,9 +5,9 @@ import Scissors from "./icons/Scissors";
 import "./App.css";
 
 const choices = [
-  { id: 1, name: "rock", component: Rock },
-  { id: 2, name: "paper", component: Paper },
-  { id: 3, name: "scissors", component: Scissors },
+  { id: 1, name: "rock", component: Rock, losesTo: 2 },
+  { id: 2, name: "paper", component: Paper, losesTo: 3 },
+  { id: 3, name: "scissors", component: Scissors, losesTo: 1 },
 ];
 
 export default function App() {
@@ -26,7 +26,18 @@ export default function App() {
     const chosenChoice = choices.find((c) => c.id === choice);
     setUserChoice(chosenChoice);
 
-    setGameState("win");
+    if (chosenChoice.losesTo === computerChoice.id) {
+      //lose
+      setGameState("lose");
+      setLosses((loses) => losses + 1);
+    } else if (computerChoice.losesTo === chosenChoice.id) {
+      //win
+      setGameState("win");
+      setWins((wins) => wins + 1);
+    } else if (computerChoice.id === chosenChoice.id) {
+      //draw
+      setGameState("draw");
+    }
   }
 
   function renderComponent(choice) {
@@ -60,7 +71,7 @@ export default function App() {
           <div>
             <div className="game-state-content">
               <p>{renderComponent(userChoice)}</p>
-              <p>You won</p>
+              <p>You {gameState} !</p>
               <p>{renderComponent(computerChoice)}</p>
             </div>
           </div>
