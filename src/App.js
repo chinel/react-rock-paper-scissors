@@ -3,7 +3,7 @@ import Rock from "./icons/Rock";
 import Paper from "./icons/Paper";
 import Scissors from "./icons/Scissors";
 import "./App.css";
-import WinLoses from "./components/GameState";
+import WinLoses from "./components/WinLoses";
 import Choices from "./components/Choices";
 import GameState from "./components/GameState";
 
@@ -50,13 +50,16 @@ export default function App() {
   }
 
   function renderComponent(choice) {
-    const Component = choice.component;
-    return <Component />;
+    const Component = choice?.component;
+    return choice ? <Component /> : null;
   }
+
+  console.log(typeof renderComponent);
 
   return (
     <div className="app">
       {/* information goes here */}
+
       <WinLoses wins={wins} lose={losses} />
 
       {/* the popup to show win/loss/draw */}
@@ -64,7 +67,7 @@ export default function App() {
         <GameState
           gameState={gameState}
           restartGame={restartGame}
-          renderComponent={renderComponent}
+          renderComp={renderComponent}
           userChoice={userChoice}
           computerChoice={computerChoice}
         />
